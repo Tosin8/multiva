@@ -1,96 +1,49 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:multiva/screen/cart.dart';
 import 'package:multiva/screen/productList.dart';
-import 'package:multiva/screen/profile.dart';
 
-
-
-
+import 'screen/cart.dart';
+import 'screen/profile.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
 
   @override
-  _BottomNavState createState() => _BottomNavState();
+  State<BottomNav> createState() => _BottomNavState();
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int _selectedIndex = 0;
-  PageController _pageController = PageController();
+  int index = 0;
 
-  static const List<Widget> _pages = <Widget>[
-   
-    ProductScreen(key: PageStorageKey('ProductScreen')),
-    CartScreen(key: PageStorageKey('CartScreen')),
-    
-    ProfileScreen(key: PageStorageKey('ProfileScreen')),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      _pageController.jumpToPage(index);
-    });
-  }
-
+  final screens = [
+    ProductScreen(), 
+    CartScreen(),
+    ProfileScreen(),
+  ]; 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      body: Stack(
-        children: [
-          PageView(
-            controller: _pageController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: _pages,
-          ),
-          Positioned(
-            bottom: 20.0,
-            left: 20,
-            right: 20,
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16.0),
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(30.0),
-                // ignore: prefer_const_literals_to_create_immutables
-                boxShadow: [
-                  const BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 10,
-                    spreadRadius: 5,
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                SizedBox(width: 2,),  
-                  IconButton(
-                    icon: const Icon(Iconsax.home),
-                    color: _selectedIndex == 0 ? Colors.pink : Colors.white,
-                    onPressed: () => _onItemTapped(0),
-                  ),
-                 // Space for FAB
-                  IconButton(
-                    icon: const Icon(Iconsax.shopping_bag),
-                    color: _selectedIndex == 1 ? Colors.pink : Colors.white,
-                    onPressed: () => _onItemTapped(1),
-                  ),
-                  IconButton(
-                    icon: const Icon(Iconsax.user),
-                    color: _selectedIndex == 2 ? Colors.pink : Colors.white,
-                    onPressed: () => _onItemTapped(2),
-                  ),
-                  SizedBox(width: 2,), 
-                ],
-              ),
-            ),
-          ),
-  ]    )  
-   );
+      body: screens[index],
+      bottomNavigationBar:
+      
+      NavigationBarTheme(
+        data: NavigationBarThemeData(
+          indicatorColor: Colors.pink, 
+          labelTextStyle: WidgetStateProperty.all(TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white))), 
+       child:
+       NavigationBar(
+        height: 80, 
+        backgroundColor: Colors.black,
+        selectedIndex: index,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        animationDuration: const Duration(seconds: 1),
+        onDestinationSelected: (int index) => setState(() => this.index = index),
+        destinations: [
+          NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Iconsax.shopping_cart), label: 'Cart'),
+          NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+        ],),), 
+    );
   }
 }
