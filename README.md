@@ -12,3 +12,7 @@ App Screenshots:
 
 the apk download link: 
 https://drive.google.com/drive/folders/1LGi1TlAR4fEViW6_OHCP2yJhDtQCaxhO?usp=sharing
+
+About: 
+This is a HNG Stage 3, 
+The app ( an ecommerce )  is written with Flutter, using Provider state management. 
