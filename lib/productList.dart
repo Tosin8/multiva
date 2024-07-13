@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
@@ -50,14 +49,14 @@ class ProductScreen extends StatelessWidget {
               children: [
                 const Text('Premium Sounds', style: TextStyle(fontSize: 20, color: Colors.white, 
                 fontWeight: FontWeight.bold),
-                ).animate().fadeIn(duration: 1000.ms), 
+                ), 
                  const Text('Premium Savings', style: TextStyle(fontSize: 20, color: Colors.white, 
                 fontWeight: FontWeight.bold),
                 ),
                  const Text('Limited Offer, hurry up and \nget yours now', style: TextStyle(fontSize: 16, color: Colors.white, 
               ),
                 ),
-              ],
+              ].animate(interval: 400.ms).fade(duration: 500.ms),
              ),
            )
           ], 
