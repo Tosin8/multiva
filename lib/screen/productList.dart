@@ -66,8 +66,45 @@ class ProductScreen extends StatelessWidget {
     
     
     // Title Category .
-    SizedBox(height: 20,), 
+    const SizedBox(height: 20,), 
     const Text('Tech Gadget', style: headerStyle), 
+    const SizedBox(height: 10,), 
+
+    // Product List
+    Container(
+      height: 400, width: 200,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset('assets/images/1.jpg', height: 200, width:200,  fit: BoxFit.cover,),
+          ), 
+          const SizedBox(height: 10,), 
+          const Text('Hp Envy 300', 
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),), 
+          const SizedBox(height: 5,), 
+        const Text('The HP Envy is a line of sleek, high-performance laptops known for their stylish design, powerful hardware, and advanced features. The series comes in various sizes, with options for both everyday use and demanding tasks such as gaming or creative work.', 
+        style: TextStyle(fontSize: 16),
+        maxLines: 2,
+        softWrap:true,
+        overflow: TextOverflow.ellipsis,), 
+        const SizedBox(height: 5,), 
+          const Text('₹ 30,000', 
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
+          const SizedBox(height: 5,), 
+          Container(
+            height: 40, width: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.pink,
+            ),
+            child: const Align(child: Text('Add to Cart',
+             style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),)),
+          ), 
+        ],
+      ),
+    )
     ],
     ),
   ),

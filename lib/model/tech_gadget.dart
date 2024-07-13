@@ -4,13 +4,14 @@ class TechGadget {
   String imageUrl;
   String price; 
 
-  TechGadget(this.name, this.description, this.imageUrl, this.price);
+  TechGadget({required this.name, required this.description, required this.imageUrl, required this.price});
 }
 
 final techGadgets = <TechGadget>[
   TechGadget(
-    "Apple Watch",
-     "Apple Watch", 
-     "assets/images/watch.png",
-      "10"),
+   name: "Hp Envy 300",
+   description: 'The HP Envy is a line of sleek, high-performance laptops known for their stylish design, powerful hardware, and advanced features. The series comes in various sizes, with options for both everyday use and demanding tasks such as gaming or creative work.', 
+     
+     imageUrl: "assets/images/1.jpg",
+     price: "#10,000"),
 ]; 

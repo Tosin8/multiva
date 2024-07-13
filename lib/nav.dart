@@ -56,6 +56,7 @@ class _BottomNavState extends State<BottomNav> {
               decoration: BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(30.0),
+                // ignore: prefer_const_literals_to_create_immutables
                 boxShadow: [
                   const BoxShadow(
                     color: Colors.black26,
