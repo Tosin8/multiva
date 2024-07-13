@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:multiva/const/headers_style.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
@@ -23,7 +24,8 @@ class ProductScreen extends StatelessWidget {
  
   )),
   body: Padding(
-    padding: const EdgeInsets.only(left: 2, right: 2), 
+    padding: const EdgeInsets.only(left: 8, 
+    right: 8), 
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -64,8 +66,8 @@ class ProductScreen extends StatelessWidget {
     
     
     // Title Category .
-    
-    const Text('Tech Gadget', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
+    SizedBox(height: 20,), 
+    const Text('Tech Gadget', style: headerStyle), 
     ],
     ),
   ),
