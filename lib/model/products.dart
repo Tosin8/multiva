@@ -1,4 +1,5 @@
 
+import 'men_fashion.dart';
 import 'tech_gadget.dart';
 
 // class Products extends ChangeNotifier{
@@ -35,3 +36,33 @@ import 'tech_gadget.dart';
 ]; 
 //}
 
+final menfashion = [
+  MenFashion(
+    name: 'Black-Brown Men Leather Belt',
+   description: 'Buy quality denim Jean, a brand that will put you in the elite class. Look absolutely unique and smart on classy and Modern wear. ',
+    imageUrl: 'assets/images/8.jpg', 
+    
+    price: '#45,000'), 
+
+     MenFashion(
+    name: 'Unisex Plain Black Face',
+   description: 'Look smart every season with  fitted face  protection cap that gives you best feeling of comfort and satisfactions when put on.',
+    imageUrl: 'assets/images/9.jpg', 
+    
+    price: '#25,000'), 
+
+
+    MenFashion(
+    name: 'Men Short Sleeve T-shirt',
+   description: 'Summer New Men Casual T-shirt Welcome to our store! ',
+    imageUrl: 'assets/images/10.jpg', 
+    
+    price: '#15,000'), 
+    
+    MenFashion(
+    name: 'Wedding Businness Men Dress Shoes',
+   description: 'Summer New Men Casual T-shirt Welcome to our store! ',
+    imageUrl: 'assets/images/11.jpg', 
+    
+    price: '#18,000'), 
+]; 
