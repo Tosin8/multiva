@@ -22,6 +22,7 @@ class ProductScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
+   
         child: Padding(
           padding: const EdgeInsets.only(left: 8, right: 8),
           child: Column(
@@ -131,9 +132,9 @@ class ProductScreen extends StatelessWidget {
                           const SizedBox(height: 10,),
                           Text(menfashion[index].name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
                           const SizedBox(height: 5,),
-                          Text(techGadgets[index].description, style: const TextStyle(fontSize: 16), maxLines: 2, softWrap: true, overflow: TextOverflow.ellipsis,),
+                          Text(menfashion[index].description, style: const TextStyle(fontSize: 16), maxLines: 2, softWrap: true, overflow: TextOverflow.ellipsis,),
                           const SizedBox(height: 5,),
-                          Text(techGadgets[index].price, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+                          Text(menfashion[index].price, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
                           const SizedBox(height: 5,),
                           Container(
                             height: 40,
@@ -152,9 +153,12 @@ class ProductScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            
             ],
           ),
+        
         ),
+        
       ),
     );
   }
