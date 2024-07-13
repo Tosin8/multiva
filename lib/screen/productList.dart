@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:multiva/const/headers_style.dart';
 
+import '../model/products.dart';
+
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
 
@@ -69,28 +71,30 @@ class ProductScreen extends StatelessWidget {
     const SizedBox(height: 20,), 
     const Text('Tech Gadget', style: headerStyle), 
     const SizedBox(height: 10,), 
-
-    // Product List
-    Container(
+ListView.builder(
+  scrollDirection: Axis.horizontal,
+  itemCount: techGadgets.length,
+  shrinkWrap: true,
+  itemBuilder: (context, index) =>  Container(
       height: 400, width: 200,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset('assets/images/1.jpg', height: 200, width:200,  fit: BoxFit.cover,),
+            child: Image.asset(techGadgets[index].imageUrl, height: 200, width:200,  fit: BoxFit.cover,),
           ), 
           const SizedBox(height: 10,), 
-          const Text('Hp Envy 300', 
+           Text(techGadgets[index].name, 
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),), 
           const SizedBox(height: 5,), 
-        const Text('The HP Envy is a line of sleek, high-performance laptops known for their stylish design, powerful hardware, and advanced features. The series comes in various sizes, with options for both everyday use and demanding tasks such as gaming or creative work.', 
+         Text(techGadgets[index].description, 
         style: TextStyle(fontSize: 16),
         maxLines: 2,
         softWrap:true,
         overflow: TextOverflow.ellipsis,), 
         const SizedBox(height: 5,), 
-          const Text('₹ 30,000', 
+           Text(techGadgets[index].price, 
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
           const SizedBox(height: 5,), 
           Container(
@@ -104,7 +108,10 @@ class ProductScreen extends StatelessWidget {
           ), 
         ],
       ),
-    )
+    ), 
+), 
+    // Product List
+   
     ],
     ),
   ),

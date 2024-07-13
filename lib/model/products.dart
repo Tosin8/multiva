@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
 
 import 'tech_gadget.dart';
 
-class Products extends ChangeNotifier{
+// class Products extends ChangeNotifier{
 
  //  List<Product> _products = [];
- final techGadgets = <TechGadget>[
+ final techGadgets = [
   TechGadget(
    name: "Hp Envy 300",
    description: 'The HP Envy is a line of sleek, high-performance laptops known for their stylish design, powerful hardware, and advanced features.', 
@@ -34,5 +33,5 @@ class Products extends ChangeNotifier{
      price: "#60,000"),
      
 ]; 
-}
+//}
 
