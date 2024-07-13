@@ -7,19 +7,40 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
+      backgroundColor: Colors.grey.shade300,
    appBar: PreferredSize(
   
   preferredSize: const Size.fromHeight(50),
  child: 
  AppBar(
+  elevation: 0,
+  
+  backgroundColor: Colors.grey.shade300,
   automaticallyImplyLeading: false,
-  title: const Text('Essentials',), 
+  title: const Text('Product List',), 
+  
   centerTitle: true,
-  actions: [
-    IconButton(onPressed: (){}, 
-    icon: const Icon(Iconsax.notification,
-     color: Colors.black,))
-  ],)),
+ 
+  )),
+  body: Column(
+    children: [
+      const SizedBox(height: 20,),
+      Container(
+        
+        height: 40,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          image: const DecorationImage(
+            image: AssetImage('assets/images/bill.jpg'),
+          ) ),    
+  ), 
+
+  // Title Category .
+
+  const Text('Tech Gadget')
+  ],
+  ),
     );
   }
 }
