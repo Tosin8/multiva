@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:multiva/const/headers_style.dart';
+import 'package:multiva/model/cart_provider.dart';
+import 'package:provider/provider.dart';
 
+import '../model/cart.dart';
 import '../model/products.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -85,15 +88,26 @@ class ProductScreen extends StatelessWidget {
                           const SizedBox(height: 5,),
                           Text(techGadgets[index].price, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
                           const SizedBox(height: 5,),
-                          Container(
-                            height: 40,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: Colors.pink,
-                            ),
-                            child: const Align(
-                              child: Text('Add to Cart', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                          GestureDetector(
+                            onTap: () {
+                               final cartItem = CartItem(
+                                name: techGadgets[index].name,
+                                imageUrl: techGadgets[index].imageUrl,
+                                description: techGadgets[index].description,
+                                price:  techGadgets[index].price,
+                              );
+                              Provider.of<CartProvider>(context, listen: false).addItem(cartItem);
+                            },
+                            child: Container(
+                              height: 40,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: Colors.pink,
+                              ),
+                              child: const Align(
+                                child: Text('Add to Cart', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                              ),
                             ),
                           ),
                         ],
@@ -136,15 +150,26 @@ class ProductScreen extends StatelessWidget {
                           const SizedBox(height: 5,),
                           Text(menfashion[index].price, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
                           const SizedBox(height: 5,),
-                          Container(
-                            height: 40,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: Colors.pink,
-                            ),
-                            child: const Align(
-                              child: Text('Add to Cart', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                          GestureDetector( 
+                            onTap: () {
+                              final cartItem = CartItem(
+                                name: menfashion[index].name,
+                                imageUrl: menfashion[index].imageUrl,
+                                description: menfashion[index].description,
+                                price: menfashion[index].price,
+                              );
+                              Provider.of<CartProvider>(context, listen: false).addItem(cartItem);
+                            },
+                            child: Container(
+                              height: 40,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: Colors.pink,
+                              ),
+                              child: const Align(
+                                child: Text('Add to Cart', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                              ),
                             ),
                           ),
                         ],
