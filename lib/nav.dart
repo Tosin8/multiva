@@ -48,8 +48,8 @@ class _BottomNavState extends State<BottomNav> {
           ),
           Positioned(
             bottom: 20.0,
-            left: 0,
-            right: 0,
+            left: 20,
+            right: 20,
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 16.0),
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -67,23 +67,24 @@ class _BottomNavState extends State<BottomNav> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                 
+                SizedBox(width: 2,),  
                   IconButton(
-                    icon: const Icon(Iconsax.category),
-                    color: _selectedIndex == 1 ? Colors.grey : Colors.white,
+                    icon: const Icon(Iconsax.home),
+                    color: _selectedIndex == 0 ? Colors.pink : Colors.white,
                     onPressed: () => _onItemTapped(0),
                   ),
-                  const SizedBox(width: 40), // Space for FAB
+                 // Space for FAB
                   IconButton(
                     icon: const Icon(Iconsax.shopping_bag),
-                    color: _selectedIndex == 3 ? Colors.grey : Colors.white,
+                    color: _selectedIndex == 1 ? Colors.pink : Colors.white,
                     onPressed: () => _onItemTapped(1),
                   ),
                   IconButton(
                     icon: const Icon(Iconsax.user),
-                    color: _selectedIndex == 4 ? Colors.grey : Colors.white,
+                    color: _selectedIndex == 2 ? Colors.pink : Colors.white,
                     onPressed: () => _onItemTapped(2),
                   ),
+                  SizedBox(width: 2,), 
                 ],
               ),
             ),

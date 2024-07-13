@@ -58,7 +58,7 @@ class ProductScreen extends StatelessWidget {
                  const Text('Limited Offer, hurry up and \nget yours now', style: TextStyle(fontSize: 16, color: Colors.white, 
               ),
                 ),
-              ].animate(interval: 400.ms).fade(duration: 500.ms),
+              ].animate(interval: 400.ms).fade(duration: 500.ms).slide(),
              ),
            )
           ], 
