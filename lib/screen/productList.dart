@@ -25,6 +25,7 @@ class ProductScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 8, right: 8),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20,),
               // Billboard
@@ -54,47 +55,61 @@ class ProductScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20,),
               // Title Category
-              const Text('Tech Gadget', style: headerStyle),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: const Text('Tech Gadget', style: headerStyle),
+              ),
               const SizedBox(height: 10,),
               SizedBox(
                 height: 400,  // Adjust the height to fit your content
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: techGadgets.length,
-                  itemBuilder: (context, index) => Container(
-                    width: 200,
-                    margin: const EdgeInsets.only(right: 8),  // Add some spacing between items
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(techGadgets[index].imageUrl, height: 200, width: 200, fit: BoxFit.cover,),
-                        ),
-                        const SizedBox(height: 10,),
-                        Text(techGadgets[index].name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
-                        const SizedBox(height: 5,),
-                        Text(techGadgets[index].description, style: const TextStyle(fontSize: 16), maxLines: 2, softWrap: true, overflow: TextOverflow.ellipsis,),
-                        const SizedBox(height: 5,),
-                        Text(techGadgets[index].price, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
-                        const SizedBox(height: 5,),
-                        Container(
-                          height: 40,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.pink,
+                  itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Container(
+                      width: 200,
+                      margin: const EdgeInsets.only(right: 8),  // Add some spacing between items
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(techGadgets[index].imageUrl, height: 200, width: 200, fit: BoxFit.cover,),
                           ),
-                          child: const Align(
-                            child: Text('Add to Cart', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                          const SizedBox(height: 10,),
+                          Text(techGadgets[index].name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+                          const SizedBox(height: 5,),
+                          Text(techGadgets[index].description, style: const TextStyle(fontSize: 16), maxLines: 2, softWrap: true, overflow: TextOverflow.ellipsis,),
+                          const SizedBox(height: 5,),
+                          Text(techGadgets[index].price, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+                          const SizedBox(height: 5,),
+                          Container(
+                            height: 40,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.pink,
+                            ),
+                            child: const Align(
+                              child: Text('Add to Cart', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
               // Product List
+
+                const SizedBox(height: 10,),
+              // Title Category
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: const Text('Men Fashion', style: headerStyle),
+              ),
+              const SizedBox(height: 10,),
             ],
           ),
         ),
