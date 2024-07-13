@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
@@ -6,10 +7,19 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
-      appBar: AppBar(
-        title: Text('Product List'),
-        centerTitle: true,
-      ),
+   appBar: PreferredSize(
+  
+  preferredSize: const Size.fromHeight(50),
+ child: 
+ AppBar(
+  automaticallyImplyLeading: false,
+  title: const Text('Essentials',), 
+  centerTitle: true,
+  actions: [
+    IconButton(onPressed: (){}, 
+    icon: const Icon(Iconsax.notification,
+     color: Colors.black,))
+  ],)),
     );
   }
 }
